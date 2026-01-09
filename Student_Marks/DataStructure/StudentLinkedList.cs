@@ -33,6 +33,11 @@ namespace Student_Marks.DataStructure
         public void Print()
         {
             Node Current = First;
+            if(First == null)
+            {
+                Console.WriteLine("Not students yet");
+                return;
+            }
             while(Current != null)
             {
                 Console.WriteLine(Current.Data.ToString());
@@ -59,6 +64,11 @@ namespace Student_Marks.DataStructure
         //للفرز عن طريق اسماء الطلاب
         public void SortingByName()
         {
+            if (First == null)
+            {
+                Console.WriteLine("Not students yet");
+                return;
+            }
             Node Current = First;
             List<Student> students = new List<Student>();
             while(Current != null)
@@ -76,6 +86,11 @@ namespace Student_Marks.DataStructure
         //للفرز عن طريق محصلة الطلاب
         public void SortingByEstimate()
         {
+            if (First == null)
+            {
+                Console.WriteLine("Not students yet");
+                return;
+            }
             Node Current = First;
             List<Student> students = new List<Student>();
             while( Current != null)
@@ -93,6 +108,11 @@ namespace Student_Marks.DataStructure
         //للبحث عن الطلاب عن طريق ادخال علامة الاختبار الاولى لهم
         public void SearchByFirstTestMark(double mark)
         {
+            if (First == null)
+            {
+                Console.WriteLine("Not students yet");
+                return;
+            }
             Node Current = First;
             List<Student> students = new List<Student>();
             while(Current != null)
@@ -107,6 +127,11 @@ namespace Student_Marks.DataStructure
         //للبحث عن الطلاب عن طريق ادخال علامة اختبارهم الثانية
         public void SearchBySecondTestMark(double mark)
         {
+            if (First == null)
+            {
+                Console.WriteLine("Not students yet");
+                return;
+            }
             Node Current = First;
             List<Student> students = new List<Student>();
             while (Current != null)
