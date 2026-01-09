@@ -11,18 +11,18 @@ namespace Student_Marks.Models
     {
         public int Number { get; set; }
         public string FullName { get; set; }
-        public Governorates Country { get; set; }
+        public string Country { get; set; }
         public double FirstTestMark { get; set; }
         public double SecondTestMark { get; set; }
         public Estimates Estimate => StudentHelper.SumEstimate(FirstTestMark, SecondTestMark);
-        public Student() { }
-        public Student(int number, string name, Governorates country, double firstTestMark, double secondTestMark)
+        public Student(string name, string country, double firstTestMark, double secondTestMark)
         {
-            Number = number;
+            Number = Count.CountStudent;
             FullName = name;
             Country = country;
             FirstTestMark = firstTestMark;
             SecondTestMark = secondTestMark;
+            Count.CountStudent++;
         }
 
         public override string ToString()
