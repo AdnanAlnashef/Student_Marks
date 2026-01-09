@@ -27,10 +27,18 @@ class Program
                     string name1 = Console.ReadLine();
                     Console.WriteLine("Enter student country : ");
                     string country1 = Console.ReadLine();
-                    Console.WriteLine("Enter First Test Mark : ");
-                    double firstMark1 = double.Parse(Console.ReadLine());
-                    Console.WriteLine("Enter second test Mark : ");
-                    double secondMark1 = double.Parse(Console.ReadLine());
+                    double firstMark1;
+                    double secondMark1;
+                    do
+                    {
+                        Console.WriteLine("Enter First Test Mark : ");
+                        firstMark1 = double.Parse(Console.ReadLine());
+                    } while (firstMark1 < 0 && firstMark1 > 100);
+                    do
+                    {
+                        Console.WriteLine("Enter second test Mark : ");
+                        secondMark1 = double.Parse(Console.ReadLine());
+                    } while (secondMark1 < 0 && secondMark1 > 100);
                     Student std1 = new Student(name1, country1, firstMark1, secondMark1);
                     MySchoole.AddFirst(std1);
                     break;
@@ -39,12 +47,39 @@ class Program
                     string name2 = Console.ReadLine();
                     Console.WriteLine("Enter student country : ");
                     string country2 = Console.ReadLine();
-                    Console.WriteLine("Enter First Test Mark : ");
-                    double firstMark2 = double.Parse(Console.ReadLine());
-                    Console.WriteLine("Enter second test Mark : ");
-                    double secondMark2 = double.Parse(Console.ReadLine());
+                    double firstMark2;
+                    double secondMark2;
+                    do
+                    {
+                        Console.WriteLine("Enter First Test Mark : ");
+                        firstMark2 = double.Parse(Console.ReadLine());
+                    } while (firstMark2 < 0 && firstMark2 > 100);
+                    do
+                    {
+                        Console.WriteLine("Enter second test Mark : ");
+                        secondMark2 = double.Parse(Console.ReadLine());
+                    }while (secondMark2 < 0 && secondMark2 > 100);
                     Student std2 = new Student(name2, country2, firstMark2, secondMark2);
-                    MySchoole.AddFirst(std2);
+                    MySchoole.AddLast(std2);
+                    break;
+                case 3:
+                    MySchoole.Print();
+                    break;
+                case 4:
+                    MySchoole.SortingByName();
+                    break;
+                case 5:
+                    MySchoole.SortingByEstimate();
+                    break;
+                case 6:
+                    Console.WriteLine("Enter first test mark : ");
+                    double first = double.Parse(Console.ReadLine());
+                    MySchoole.SearchByFirstTestMark(first);
+                    break;
+                case 7:
+                    Console.WriteLine("Enter second test mark : ");
+                    double second = double.Parse(Console.ReadLine());
+                    MySchoole.SearchByFirstTestMark(second);
                     break;
             }
         } while (qua == 'y' || qua == 'Y');
