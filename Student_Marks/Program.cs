@@ -8,7 +8,7 @@ class Program
         int enteredNumber;
         char qua;
         StudentLinkedList MySchoole = new StudentLinkedList();
-        Console.WriteLine("Welcome to out schoole..");
+        Console.WriteLine("Welcome to our schoole..");
         do
         {
             do

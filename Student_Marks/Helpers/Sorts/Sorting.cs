@@ -17,7 +17,7 @@ namespace Student_Marks.Helpers.Sorts
                     for (int j = i + 1; j < students.Count; j++)
                     {
                         int result = string.Compare(students[i].FullName, students[j].FullName, StringComparison.Ordinal);
-                        if (result < 0)
+                        if (result > 0)
                         {
                             Student std = students[i];
                             students[i] = students[j];
