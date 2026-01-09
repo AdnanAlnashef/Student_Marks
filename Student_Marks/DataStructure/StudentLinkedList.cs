@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Student_Marks.Helpers.Search;
 using Student_Marks.Helpers.Sorts;
 using Student_Marks.Models;
 using Student_Marks.Nodes;
@@ -12,6 +13,7 @@ namespace Student_Marks.DataStructure
         private Node First;
         private Node Last;
 
+        //للاضافة بالنهاية اللائحة الخطية المزدوجة
         public void AddLast(Student std)
         {
             Node node = new Node(std);
@@ -27,6 +29,7 @@ namespace Student_Marks.DataStructure
             Last = node;
         }
 
+        //لطباعة كل اللائحة الخطية المزدوجة
         public void Print()
         {
             Node Current = First;
@@ -38,6 +41,7 @@ namespace Student_Marks.DataStructure
             Console.WriteLine();
         }
 
+        //للاضافة باول اللائحة
         public void AddFirst(Student std)
         {
             Node node = new Node(std);
@@ -52,6 +56,7 @@ namespace Student_Marks.DataStructure
             First = node;
         }
 
+        //للفرز عن طريق اسماء الطلاب
         public void SortingByName()
         {
             Node Current = First;
@@ -68,6 +73,7 @@ namespace Student_Marks.DataStructure
             }
         }
 
+        //للفرز عن طريق محصلة الطلاب
         public void SortingByEstimate()
         {
             Node Current = First;
@@ -84,9 +90,32 @@ namespace Student_Marks.DataStructure
             }
         }
 
+        //للبحث عن الطلاب عن طريق ادخال علامة الاختبار الاولى لهم
         public void SearchByFirstTestMark(double mark)
         {
+            Node Current = First;
+            List<Student> students = new List<Student>();
+            while(Current != null)
+            {
+                students.Add(Current.Data);
+                Current = Current.Next;
+            }
+            SearchByMark.SearchByFirstMark(mark, students);
+            Console.WriteLine();
+        }
 
+        //للبحث عن الطلاب عن طريق ادخال علامة اختبارهم الثانية
+        public void SearchBySecondTestMark(double mark)
+        {
+            Node Current = First;
+            List<Student> students = new List<Student>();
+            while (Current != null)
+            {
+                students.Add(Current.Data);
+                Current = Current.Next;
+            }
+            SearchByMark.SearchBySecondMark(mark, students);
+            Console.WriteLine();
         }
     }
 }
