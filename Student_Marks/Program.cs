@@ -72,16 +72,30 @@ class Program
                     MySchoole.SortingByEstimate();
                     break;
                 case 6:
-                    Console.WriteLine("Enter first test mark : ");
-                    double first = double.Parse(Console.ReadLine());
+                    double first;
+                    do
+                    {
+                        Console.WriteLine("Enter first test mark : ");
+                        first = double.Parse(Console.ReadLine());
+                    }while (first < 0 && first > 100);
                     MySchoole.SearchByFirstTestMark(first);
                     break;
                 case 7:
-                    Console.WriteLine("Enter second test mark : ");
-                    double second = double.Parse(Console.ReadLine());
+                    double second;
+                    do
+                    {
+                        Console.WriteLine("Enter second test mark : ");
+                        second = double.Parse(Console.ReadLine());
+                    }while ( second < 0 && second > 100);
                     MySchoole.SearchByFirstTestMark(second);
                     break;
             }
+            do
+            {
+                Console.WriteLine("Enter y to continu or Enter n to exit");
+                qua = Convert.ToChar(Console.ReadLine());
+            } while (qua != 'y' && qua != 'Y' && qua != 'n' && qua != 'N');
         } while (qua == 'y' || qua == 'Y');
+        Console.WriteLine("Welcome techer in my schoole");
     }
 }
